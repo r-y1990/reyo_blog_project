@@ -1,7 +1,19 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
-theme = "ananke"
+theme = "PaperMod"
+
+[params]
+  layout = "list"
+  disableSummary = false
+  showReadingTime = true
+  showToc = true
+  ShowBreadCrumbs = true
+
+  # ← カード風にする設定
+  profileMode = false
+  homeInfoParams = false
+
 
 [taxonomies]
   tag = "tags"
