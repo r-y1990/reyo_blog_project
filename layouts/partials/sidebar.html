@@ -1,0 +1,33 @@
+<div class="sidebar">
+
+  <!-- タグ一覧 -->
+  <section class="sidebar-section">
+    <h3>Tags</h3>
+    <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <li><a href="{{ "/tags/" | relURL }}{{ $name | urlize }}">{{ $name }} ({{ len $taxonomy }})</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- カテゴリ一覧 -->
+  <section class="sidebar-section">
+    <h3>Categories</h3>
+    <ul>
+      {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
+        <li><a href="{{ "/categories/" | relURL }}{{ $name | urlize }}">{{ $name }} ({{ len $taxonomy }})</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+  <!-- 最近の記事 -->
+  <section class="sidebar-section">
+    <h3>Recent Posts</h3>
+    <ul>
+      {{ range first 5 .Site.RegularPages }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
+  </section>
+
+</div>
